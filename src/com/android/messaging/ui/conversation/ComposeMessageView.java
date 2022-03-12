@@ -71,6 +71,7 @@ import com.android.messaging.util.ImageUtils;
 import com.android.messaging.util.LogUtil;
 import com.android.messaging.util.MediaUtil;
 import com.android.messaging.util.OsUtil;
+import com.android.messaging.util.PhoneUtils;
 import com.android.messaging.util.SafeAsyncTask;
 import com.android.messaging.util.UiUtils;
 import com.android.messaging.util.UriUtil;
@@ -401,7 +402,8 @@ public class ComposeMessageView extends LinearLayout
             return;
         }
         // Check the host for pre-conditions about any action.
-        if (mHost.isReadyForAction()) {
+        if (mHost.isReadyForAction() && (mHost.getConversationSelfSubId() > 0
+                || PhoneUtils.getDefault().getHasPreferredSmsSim())) {
             mInputManager.showHideSimSelector(false /* show */, true /* animate */);
             final String messageToSend = mComposeEditText.getText().toString();
             mBinding.getData().setMessageText(messageToSend);
