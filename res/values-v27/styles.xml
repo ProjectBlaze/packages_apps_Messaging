@@ -18,7 +18,7 @@
     <style name="BugleBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:navigationBarColor">@color/navigation_bar_bg</item>
         <item name="android:navigationBarDividerColor">@color/navigation_bar_divider</item>
-        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowLightNavigationBar">@bool/light_navigation_bar</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>
